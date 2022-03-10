@@ -1,19 +1,12 @@
-// Followed tutorial of https://discord.js.org/#/docs/main/stable/general/welcome
+// Followed tutorial of https://discordjs.guide/creating-your-bot/#creating-configuration-files
 
-const { Client, Intents, Interaction } = require('discord.js');
-const { intersection } = require('zod');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+const client = new Client ({ intents: [Intents.FLAGS.GUILDS] });
+
+client.once('ready', () => {
+    console.log('Ready!');
 });
 
-client.on('interactionCreate', async interaction => {
-    if (!interaction.isCommand()) return;
-
-    if (interaction.commandName === 'ping') {
-        await interaction.reply('Pong!');
-    }
-});
-
-client.login('token');
+client.login(token);
