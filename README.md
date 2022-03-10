@@ -1,1 +1,2 @@
-Following reference to https://discordjs.guide/# Discord-Bot-Omnia-Gaming
+# Discord-Bot-Omnia-Gaming
+Was created Following reference to https://discordjs.guide/
